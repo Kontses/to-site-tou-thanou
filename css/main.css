@@ -51,7 +51,7 @@ li{
     align-items: center;
     position: fixed;
     z-index: -1;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif; /* Roboto Condensed απο Oswald */
     font-size: 80px;
     letter-spacing: 1px;
     transform: scaleY(1.7);
@@ -76,7 +76,7 @@ li{
     justify-content: flex-end;
 }
 .sub-title{
-    color: white;
+    color: rgb(255, 255, 255); 
     font-family: 'Poppins', sans-serif;
     padding-bottom: 25px;
     width: 65%;
@@ -187,7 +187,7 @@ li{
 }
 .first-img{
     height: 600px;
-    background: url("../img/first.png");
+    background: url("../img/first.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -206,7 +206,7 @@ li{
 }
 .second-img{
     height: 400px;
-    background: url("../img/second.png");
+    background: url("../img/second.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -225,7 +225,7 @@ li{
 }
 .third-img{
     height: 300px;
-    background: url("../img/third.png");
+    background: url("../img/third.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -244,7 +244,7 @@ li{
 }
 .forth-img{
     height: 600px;
-    background: url("../img/forth.png");
+    background: url("../img/forth.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
