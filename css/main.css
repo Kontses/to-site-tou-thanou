@@ -92,7 +92,7 @@ li{
     justify-content: flex-end;
 }
 .bottom-nav h4{
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
     transform: scaleY(1.7) translateX(-20px);
     color: #232123;
     transition: .7s all;
@@ -122,10 +122,11 @@ li{
     border-radius: 50%;
     opacity: 0.2;
     background-color: #232123;
-    margin-left: -200px;
+    margin-left: -330px;
     margin-top: -130%;
     transition: .7s all;
     transition-timing-function: ease;
+    
     
 }
 .bottom-nav:hover .circle::after{
