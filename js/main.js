@@ -1,101 +1,173 @@
 document.addEventListener('DOMContentLoaded', () => {
-    let nav = document.getElementById('bottom-nav');
-    let home = document.getElementById('home');
-    
-    let timeline1 = new TimelineMax();
-    timeline1
-        .from('.title', 1.5, {
-            y: 200,
-            ease: Power3.easeInOut
-        })
-        .from('nav', 1, {
-            y: 30,
-            autoAlpha: 0,
-            ease: Power3.easeInOut
-        }, '-=1')
-        .from('.sub-title', 1, {
-            y: 30,
-            autoAlpha: 0,
-            ease: Power3.easeInOut
-        })
-        .from('.bottom-nav', 2, {
-            width: '0%',
-            autoAlpha: 0,
-            ease: Power3.easeInOut
-        }, '-=2');
-    
-    nav.addEventListener('click', () => {
-        let timeline2 = new TimelineMax()
-        timeline2
-            .set('.grid', {
-                display: 'grid'
+    console.log('main.js loaded and DOMContentLoaded');
+    let navBottom = document.getElementById('bottom-nav');
+    let homeButton = document.getElementById('home');
+    let timeline2; // Declare timeline2 here so it's accessible
+
+    console.log('homeButton element:', homeButton);
+
+    // Check if on index.html
+    if (window.location.href.includes('index.html') || !window.location.href.includes('.html')) {
+        let timeline1 = new TimelineMax();
+        timeline1
+            .from('.title', 1.5, {
+                y: 200,
+                ease: Power3.easeInOut
             })
-            .to('.forest img', 3, {
-                y: -400,
-                scale: 1.1,
-                ease: Expo.easeInOut
-            })
-            .to('.bg-image', 3, {
-                y: -600,
-                ease: Expo.easeInOut
-            }, '-=3')
-            .to('.sub-title', 3, {
+            .from('nav', 1, {
+                y: 30,
                 autoAlpha: 0,
-                y: -100,
-                ease: Expo.easeInOut
-            }, '-=3')
-            .to('.bottom-nav', 3, {
-                width: '0%',
-                ease: Expo.easeInOut
-            }, '-=3')
-            .to('nav', 3, {
-                color: '#fff',
-            }, '-=3')
-            .to('.imgs', 2, {
-                height: '100%',
-                ease: Expo.easeInOut
-            }, '-=2')
-            .to('.imgs-2', 2, {
-                height: '100%',
-                ease: Expo.easeInOut
-            }, '-=1.8')
-            .to('.imgs-3', 2, {
-                height: '100%',
-                ease: Expo.easeInOut
-            }, '-=1.7')
-            .to('.imgs-4', 2, {
-                height: '100%',
-                ease: Expo.easeInOut
-            }, '-=1.6')
-            .to('.destination', 2, {
-                autoAlpha: 1,
-                y: -20,
-                ease: Expo.easeOut
-            }, '-=1.6');
-        
-            home.addEventListener('click', ()=>{
-                timeline2.reverse();
+                ease: Power3.easeInOut
+            }, '-=1')
+            .from('.sub-title', 1, {
+                y: 30,
+                autoAlpha: 0,
+                ease: Power3.easeInOut
             })
+            .from('.bottom-nav', 2, {
+                width: '0%',
+                autoAlpha: 0,
+                ease: Power3.easeInOut
+            }, '-=2');
+        
+        navBottom.addEventListener('click', () => {
+            console.log('bottom-nav clicked');
+            if (!timeline2) { // Initialize timeline2 only once
+                timeline2 = new TimelineMax()
+                    .set('.grid', {
+                        display: 'grid'
+                    })
+                    .to('.forest img', 3, {
+                        y: -400,
+                        scale: 1.1,
+                        ease: Expo.easeInOut
+                    })
+                    .to('.bg-image', 3, {
+                        y: -600,
+                        ease: Expo.easeInOut
+                    }, '-=3')
+                    .to('.sub-title', 3, {
+                        autoAlpha: 0,
+                        y: -100,
+                        ease: Expo.easeInOut
+                    }, '-=3')
+                    .to('.bottom-nav', 3, {
+                        width: '0%',
+                        ease: Expo.easeInOut
+                    }, '-=3')
+                    .to('nav', 3, {
+                        color: '#fff',
+                    }, '-=3')
+                    .to('.imgs', 2, {
+                        height: '100%',
+                        ease: Expo.easeInOut
+                    }, '-=2')
+                    .to('.imgs-2', 2, {
+                        height: '100%',
+                        ease: Expo.easeInOut
+                    }, '-=1.8')
+                    .to('.imgs-3', 2, {
+                        height: '100%',
+                        ease: Expo.easeInOut
+                    }, '-=1.7')
+                    .to('.imgs-4', 2, {
+                        height: '100%',
+                        ease: Expo.easeInOut
+                    }, '-=1.6')
+                    .to('.destination', 2, {
+                        autoAlpha: 1,
+                        y: -20,
+                        ease: Expo.easeOut
+                    }, '-=1.6');
+            }
+        });
+    } else if (window.location.href.includes('olumpos.html')) {
+        console.log('Currently on olumpos.html. Initializing nav animation.');
+        // Animation for nav on olumpos.html
+        let olumposNavTimeline = new TimelineMax();
+        olumposNavTimeline
+            .from('nav', 1, {
+                y: 30,
+                autoAlpha: 0,
+                ease: Power3.easeInOut,
+                onStart: () => console.log('Nav animation starting'),
+                onComplete: () => console.log('Nav animation complete')
+            });
+        console.log('Nav element for animation:', document.querySelector('nav'));
+    }
+
+    // Handle Home button click (moved outside bottom-nav listener)
+    if (homeButton) {
+        homeButton.addEventListener('click', () => {
+            console.log('Home button clicked');
+            console.log('Current URL:', window.location.href);
+            // Check if current page is index.html or olumpos.html
+            if (window.location.href.includes('index.html') || !window.location.href.includes('.html')) {
+                console.log('Currently on index.html or root. Attempting to reverse timeline2 if exists.');
+                // On index.html, if timeline2 (grid animation) exists and has played, reverse it
+                if (timeline2 && timeline2.progress() > 0) {
+                    timeline2.reverse();
+                }
+            } else if (window.location.href.includes('olumpos.html')) {
+                console.log('Currently on olumpos.html. Home button clicked. Simply loading index.html.');
+                // On olumpos.html, simply load index.html without a transition
+                window.location.href = 'index.html';
+            }
+        });
+    }
+
+    function transitionToPage(url) {
+        console.log('Transitioning to page:', url);
+        let transitionTimeline = new TimelineMax();
+        let overlay = document.querySelector('.page-transition-overlay');
+
+        if (overlay) {
+            transitionTimeline
+                .set(overlay, { visibility: 'visible', pointerEvents: 'auto' }) // Make overlay visible and interactive
+                .to(overlay, 0.7, {
+                    opacity: 1, // Fade in the white overlay
+                    ease: Power2.easeOut,
+                    onComplete: () => {
+                        console.log('Overlay fully opaque, redirecting to', url);
+                        window.location.href = url;
+                    }
+                });
+        } else {
+            // Fallback if overlay not found (shouldn't happen if setup correctly)
+            window.location.href = url;
+        }
+    }
+
+    // New animation for page entry (fade out the white overlay)
+    let overlay = document.querySelector('.page-transition-overlay');
+    if (overlay) {
+        // Ensure the overlay is visible and opaque initially for the entry animation
+        TweenMax.set(overlay, { opacity: 1, visibility: 'visible', pointerEvents: 'auto' });
+        TweenMax.to(overlay, 0.7, {
+            opacity: 0,
+            ease: Power2.easeIn,
+            onComplete: () => {
+                TweenMax.set(overlay, { visibility: 'hidden', pointerEvents: 'none' });
+                console.log('Page entry transition complete.');
+            }
+        });
+    }
+
+    document.querySelectorAll('.imgs, .imgs-2, .imgs-3, .imgs-4').forEach(img => {
+        img.addEventListener('click', () => {
+            console.log('Image clicked, transitioning to olumpos.html');
+            transitionToPage('olumpos.html');
+        });
     });
 
-    
+    // Handle dropdown link click
+    let olumposLink = document.querySelector('.dropdown-content a[href="olumpos.html"]');
+    if (olumposLink) {
+        olumposLink.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent default link behavior
+            console.log('Dropdown link clicked, transitioning to olumpos.html');
+            transitionToPage('olumpos.html');
+        });
+    }
+});
 
-    /*let controller = new ScrollMagic.Controller();
-    
-    let timeline2 = new TimelineMax()
-    timeline2
-        .to('.forest img', 6, {y: -400, ease: Power2.easeIn})
-        .to('.forest img', 6, {scale: 1.1}, '-=6')
-        .to('.bg-image', 6, {y: -100}, '-=6');
-    
-    let tweenHome = new ScrollMagic.Scene({
-            triggerElement: '.container',
-            duration: '100%',
-            triggerHook: 0
-        })
-        .setTween(timeline2)
-        .addIndicators()
-        .setPin('.container')
-        .addTo(controller);
-    */
-})

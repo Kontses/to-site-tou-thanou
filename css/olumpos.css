@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.olumpos-bg-image {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    position: fixed;
+    background: url('../img/first.jpg') no-repeat center 50%;
+    background-size: cover;
+}
+
+.main-section {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden; /* Prevent scrolling of the section itself */
+    position: relative; /* Needed for z-index context for children */
+}
+
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #ffffff; /* Changed to fully opaque white */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 60px; /* Adjusted to place the container below the nav bar, considering nav height */
+    position: relative;
+    z-index: 2;
+    height: 100%; /* Crucial for background image placement */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tours-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.tours-table th,
+.tours-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.tours-table th {
+    background-color: #ffffff;
+    font-weight: bold;
+}
+
+.tours-table tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.tours-table tbody tr:hover {
+    background-color: #f0f0f0;
+}
+
+.tours-table th:nth-child(4), /* Αναχώρηση Καλαμαριά */
+.tours-table th:nth-child(5), /* Στάση Κέντρο */
+.tours-table th:nth-child(6), /* Στάση One Salonica */
+.tours-table th:nth-child(7)  /* Στάση Λιτόχωρο */
+{
+    /* color: #ff6347; Tomato color for these headers */
+}
+
+.availability {
+    text-align: center;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 2px;
+}
+
+.dot.available {
+    background-color: #4CAF50;
+}
+
+.booking-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.booking-btn:hover {
+    background-color: #45a049;
+}
+
+/* The nav rule was removed from here as it should be controlled by main.css */ 

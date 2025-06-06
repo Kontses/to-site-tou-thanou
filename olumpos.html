@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Εκδρομές στον Όλυμπο</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/olumpos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Poppins" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <div class="page-transition-overlay"></div>
+    <section class="main-section">
+        <nav>
+            <div class="left">
+                <ul>
+                    <li id="home"><i class="fa fa-home"></i> Αρχική</li>
+                    <li class="dropdown"><i class=""></i>Εκδρομές
+                        <div class="dropdown-content">
+                            <a href="olumpos.html">Όλυμπος</a>
+                        </div>
+                    </li>
+                    <li id=""><i class=""></i>Αφετερίες</li>
+                </ul>
+            </div>
+            <div class="middle">
+                <h4> ΟΝΟΜΑ <br> ΕΤΑΙΡΙΑΣ </h4>
+            </div>  
+            <div class="right">
+                <ul>
+                    <li id=""><i class=""></i>Επικοινωνία</li>
+                    <li><i class="fa fa-twitter"></i></li>
+                    <li><i class="fa fa-facebook-f"></i></li>
+                    <li><i class="fa fa-instagram"></i></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <h1>Ανάβαση στον Όλυμπο</h1>
+            <p class="sub-title">Ανακάλυψε περιπέτειες που θα σε θέσουν σε καταστροφή και άλλα τέτοια λόγια που δουλέυουν στο μαρκετινγκ.</p>                
+            <table class="tours-table">
+                <thead>
+                    <tr>
+                        <th>Προορισμός</th>
+                        <th>Ημερομηνία Αναχώρησης</th>
+                        <th>Ημερομηνία Επιστροφής</th>
+                        <th>Αναχώρηση Καλαμαριά</th>
+                        <th>Στάση Κέντρο</th>
+                        <th>Στάση One Salonica</th>
+                        <th>Στάση Λιτόχωρο</th>
+                        <th>Διάρκεια</th>
+                        <th>Διάρκεια Ταξιδιού</th>
+                        <th>Θέσεις που απομένουν</th>
+                        <th>Τιμή</th>
+                        <th>Κράτηση</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Olympus</td>
+                        <td>Σάββατο, 05/07/2025</td>
+                        <td>Κυριακή, 06/07/2025</td>
+                        <td>07:00</td>
+                        <td>07:15</td>
+                        <td>07:30</td>
+                        <td>08:30</td>
+                        <td>2ήμερο</td>
+                        <td>01:30</td>
+                        <td class="availability">
+                            <span class="dot available"></span>
+                            <span class="dot available"></span>
+                            <span class="dot"></span>
+                        </td>
+                        <td>120,00 €</td>
+                        <td><button class="booking-btn">Κάνε κράτηση</button></td>
+                    </tr>
+                    <tr>
+                        <td>Olympus & Mytikas</td>
+                        <td>Σάββατο, 05/07/2025</td>
+                        <td>Κυριακή, 06/07/2025</td>
+                        <td>07:00</td>
+                        <td>07:15</td>
+                        <td>07:30</td>
+                        <td>08:30</td>
+                        <td>2ήμερο</td>
+                        <td>01:30</td>
+                        <td class="availability">
+                            <span class="dot available"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </td>
+                        <td>160,00 €</td>
+                        <td><button class="booking-btn">Κάνε κράτηση</button></td>
+                    </tr>
+                    <tr>
+                        <td>Olympus</td>
+                        <td>Σάββατο, 12/07/2025</td>
+                        <td>Κυριακή, 13/07/2025</td>
+                        <td>07:00</td>
+                        <td>07:15</td>
+                        <td>07:30</td>
+                        <td>08:30</td>
+                        <td>2ήμερο</td>
+                        <td>01:30</td>
+                        <td class="availability">
+                            <span class="dot available"></span>
+                            <span class="dot available"></span>
+                            <span class="dot available"></span>
+                        </td>
+                        <td>120,00 €</td>
+                        <td><button class="booking-btn">Κάνε κράτηση</button></td>
+                    </tr>
+                    <tr>
+                        <td>Olympus & Mytikas</td>
+                        <td>Σάββατο, 12/07/2025</td>
+                        <td>Κυριακή, 13/07/2025</td>
+                        <td>07:00</td>
+                        <td>07:15</td>
+                        <td>07:30</td>
+                        <td>08:30</td>
+                        <td>2ήμερο</td>
+                        <td>01:30</td>
+                        <td class="availability">
+                            <span class="dot available"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </td>
+                        <td>160,00 €</td>
+                        <td><button class="booking-btn">Κάνε κράτηση</button></td>
+                    </tr>
+                    <tr>
+                        <td>Olympus</td>
+                        <td>Σάββατο, 19/07/2025</td>
+                        <td>Κυριακή, 20/07/2025</td>
+                        <td>07:00</td>
+                        <td>07:15</td>
+                        <td>07:30</td>
+                        <td>08:30</td>
+                        <td>2ήμερο</td>
+                        <td>01:30</td>
+                        <td class="availability">
+                            <span class="dot available"></span>
+                            <span class="dot available"></span>
+                            <span class="dot"></span>
+                        </td>
+                        <td>120,00 €</td>
+                        <td><button class="booking-btn">Κάνε κράτηση</button></td>
+                    </tr>
+                    <tr>
+                        <td>Olympus & Mytikas</td>
+                        <td>Σάββατο, 19/07/2025</td>
+                        <td>Κυριακή, 20/07/2025</td>
+                        <td>07:00</td>
+                        <td>07:15</td>
+                        <td>07:30</td>
+                        <td>08:30</td>
+                        <td>2ήμερο</td>
+                        <td>01:30</td>
+                        <td class="availability">
+                            <span class="dot available"></span>
+                            <span class="dot available"></span>
+                            <span class="dot available"></span>
+                        </td>
+                        <td>160,00 €</td>
+                        <td><button class="booking-btn">Κάνε κράτηση</button></td>
+                    </tr>
+                     <tr>
+                        <td>Olympus</td>
+                        <td>Σάββατο, 26/07/2025</td>
+                        <td>Κυριακή, 27/07/2025</td>
+                        <td>07:00</td>
+                        <td>07:15</td>
+                        <td>07:30</td>
+                        <td>08:30</td>
+                        <td>2ήμερο</td>
+                        <td>01:30</td>
+                        <td class="availability">
+                            <span class="dot available"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </td>
+                        <td>120,00 €</td>
+                        <td><button class="booking-btn">Κάνε κράτηση</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="olumpos-bg-image"></div>
+        </div>
+    </section>
+</body>
+</html> 
