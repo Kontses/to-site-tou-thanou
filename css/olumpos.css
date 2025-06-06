@@ -52,6 +52,7 @@ h1 {
     padding: 8px;
     text-align: left;
     vertical-align: middle;
+    background-color: #ffffff9c; /* Added for all table cells */
 }
 
 .tours-table th {
@@ -60,7 +61,7 @@ h1 {
 }
 
 .tours-table tbody tr:nth-child(even) {
-    background-color: #ffffff;
+    background-color: #f9f9f9; /* Changed to a slightly different shade for even rows for visual distinction */
 }
 
 .tours-table tbody tr:hover {
