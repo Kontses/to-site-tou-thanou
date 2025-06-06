@@ -1,3 +1,5 @@
+import { transitionToPage, initializePageEntryTransition } from './pageTransitions.js';
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log('main.js loaded and DOMContentLoaded');
     let navBottom = document.getElementById('bottom-nav');
@@ -5,6 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let timeline2; // Declare timeline2 here so it's accessible
 
     console.log('homeButton element:', homeButton);
+
+    initializePageEntryTransition(); // Initialize the page entry transition
 
     // Check if on index.html
     if (window.location.href.includes('index.html') || !window.location.href.includes('.html')) {
@@ -111,44 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (window.location.href.includes('olumpos.html')) {
                 console.log('Currently on olumpos.html. Home button clicked. Simply loading index.html.');
                 // On olumpos.html, simply load index.html without a transition
-                window.location.href = 'index.html';
-            }
-        });
-    }
-
-    function transitionToPage(url) {
-        console.log('Transitioning to page:', url);
-        let transitionTimeline = new TimelineMax();
-        let overlay = document.querySelector('.page-transition-overlay');
-
-        if (overlay) {
-            transitionTimeline
-                .set(overlay, { visibility: 'visible', pointerEvents: 'auto' }) // Make overlay visible and interactive
-                .to(overlay, 0.7, {
-                    opacity: 1, // Fade in the white overlay
-                    ease: Power2.easeOut,
-                    onComplete: () => {
-                        console.log('Overlay fully opaque, redirecting to', url);
-                        window.location.href = url;
-                    }
-                });
-        } else {
-            // Fallback if overlay not found (shouldn't happen if setup correctly)
-            window.location.href = url;
-        }
-    }
-
-    // New animation for page entry (fade out the white overlay)
-    let overlay = document.querySelector('.page-transition-overlay');
-    if (overlay) {
-        // Ensure the overlay is visible and opaque initially for the entry animation
-        TweenMax.set(overlay, { opacity: 1, visibility: 'visible', pointerEvents: 'auto' });
-        TweenMax.to(overlay, 0.7, {
-            opacity: 0,
-            ease: Power2.easeIn,
-            onComplete: () => {
-                TweenMax.set(overlay, { visibility: 'hidden', pointerEvents: 'none' });
-                console.log('Page entry transition complete.');
+                transitionToPage('index.html');
             }
         });
     }
