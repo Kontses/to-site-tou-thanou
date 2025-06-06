@@ -68,14 +68,6 @@ h1 {
     background-color: #f0f0f0;
 }
 
-.tours-table th:nth-child(4), /* Αναχώρηση Καλαμαριά */
-.tours-table th:nth-child(5), /* Στάση Κέντρο */
-.tours-table th:nth-child(6), /* Στάση One Salonica */
-.tours-table th:nth-child(7)  /* Στάση Λιτόχωρο */
-{
-    /* color: #ff6347; Tomato color for these headers */
-}
-
 .availability {
     text-align: center;
 }

@@ -397,3 +397,191 @@ li{
     visibility: hidden;
     pointer-events: none; /* Allows clicks to pass through when hidden */
 }
+
+nav ul li a {
+    text-decoration: none;
+    color: inherit; /* Κληρονομεί το χρώμα από το li */
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #555; /* Αλλάζει το χρώμα κατά την επικόλληση */
+}
+
+/* Contact Page Styles */
+.contact-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 100px 50px;
+    gap: 50px; /* Απόσταση μεταξύ των στηλών */
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-info,
+.contact-form {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 38%;
+}
+
+.contact-info h2,
+.contact-form h2 {
+    font-family: 'Oswald', sans-serif;
+    color: #232123;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 2em;
+}
+
+.contact-info p {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info p i {
+    margin-right: 15px;
+    color: #555;
+    font-size: 1.3em;
+}
+
+.contact-info a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    box-sizing: border-box; /* Περιλαμβάνει το padding στο πλάτος */
+}
+
+.form-group textarea {
+    resize: vertical; /* Επιτρέπει μόνο κατακόρυφη αλλαγή μεγέθους */
+}
+
+.contact-form button {
+    background-color: #232123;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+    display: block; /* Για να πάρει όλο το πλάτος */
+    margin: 0 auto; /* Για να κεντραριστεί */
+}
+
+.contact-form button:hover {
+    background-color: #555;
+}
+
+/* Background Image for Contact Page */
+.contact-content + .bg-image {
+    background: url('../img/Contact.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Βεβαιωθείτε ότι είναι πίσω από το περιεχόμενο */
+}
+
+@media only screen and (max-width: 992px) {
+    .contact-content {
+        flex-direction: column; /* Στοίχιση σε στήλη σε μικρότερες οθόνες */
+        align-items: center;
+        padding: 50px 20px;
+    }
+
+    .contact-info,
+    .contact-form {
+        width: 90%; /* Πιο μεγάλο πλάτος στις μικρές οθόνες */
+        margin-bottom: 30px;
+    }
+}
+
+.contact-scroll-section {
+    height: auto; /* Επιτρέπει στο περιεχόμενο να καθορίσει το ύψος */
+    min-height: 100vh; /* Διασφαλίζει ότι καταλαμβάνει τουλάχιστον το πλήρες ύψος της οθόνης */
+    overflow-y: scroll; /* Ενεργοποιεί την κάθετη κύλιση */
+    overflow-x: hidden; /* Απόκρυψη οριζόντιας γραμμής κύλισης */
+    -webkit-overflow-scrolling: touch; /* Ομαλή κύλιση σε συσκευές αφής */
+}
+
+.contact-scroll-section nav {
+    color: white; /* Αλλάζει το χρώμα του nav bar σε λευκό για τη σελίδα επικοινωνίας */
+}
+
+.contact-scroll-section .title .black {
+    color: white; /* Αλλάζει το χρώμα του τίτλου σε λευκό για τη σελίδα επικοινωνίας */
+}
+
+.contact-scroll-section .title {
+    position: relative; /* Αλλάζει από fixed σε relative για κύλιση */
+    padding-top: 100px; /* Προσθήκη padding για να ωθήσει το περιεχόμενο κάτω από το nav bar */
+    z-index: 1; /* Διασφαλίζει ότι ο τίτλος είναι πάνω από την εικόνα φόντου */
+}
+
+.contact-scroll-section .contact-content {
+    position: relative; /* Διασφαλίζει ότι το περιεχόμενο είναι πάνω από την εικόνα φόντου */
+    z-index: 1;
+}
+
+/* Ενημέρωση του bg-image για να είναι σωστά στοιχισμένο με το scrollable content */
+.contact-scroll-section .bg-image {
+    position: fixed; /* Διατηρεί την εικόνα φόντου σταθερή */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Διασφαλίζει ότι είναι πίσω από το περιεχόμενο */
+}
+
+@media only screen and (max-width: 992px) {
+    .contact-content {
+        flex-direction: column; /* Στοίχιση σε στήλη σε μικρότερες οθόνες */
+        align-items: center;
+        padding: 50px 20px;
+    }
+
+    .contact-info,
+    .contact-form {
+        width: 90%; /* Πιο μεγάλο πλάτος στις μικρές οθόνες */
+        margin-bottom: 30px;
+    }
+}
