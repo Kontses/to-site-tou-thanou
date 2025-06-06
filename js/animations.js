@@ -98,6 +98,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 onComplete: () => console.log('Nav animation complete')
             });
         console.log('Nav element for animation:', document.querySelector('nav'));
+    } else if (window.location.href.includes('contact.html')) {
+        console.log('Currently on contact.html. Initializing nav animation.');
+        let contactNavTimeline = new TimelineMax();
+        contactNavTimeline
+            .from('nav', 1, {
+                y: 30,
+                autoAlpha: 0,
+                ease: Power3.easeInOut,
+                onStart: () => console.log('Contact Nav animation starting'),
+                onComplete: () => console.log('Contact Nav animation complete')
+            });
+        console.log('Nav element for animation:', document.querySelector('nav'));
     }
 
     // Handle Home button click (moved outside bottom-nav listener)
